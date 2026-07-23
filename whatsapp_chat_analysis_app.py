@@ -9,14 +9,19 @@ import plotly.express as px
 st.set_page_config(layout="wide")
 # st.set_page_config(layout="centered")
 st.sidebar.title("Whatsapp Chat Analysis")
-uploaded_file=st.sidebar.file_uploader("Choose a file ")
 
+uploaded_file=st.sidebar.file_uploader("Choose a Whatsapp_chat_file")
 
 if uploaded_file is not None:
-    bytes_data = uploaded_file.getvalue()
-    data = bytes_data.decode('utf-8')
-    df=preprocessor.preprocess(data)
-    # st.dataframe(df)
+
+    if uploaded_file.name.endswith(".txt"):
+        bytes_data = uploaded_file.getvalue()
+        data = bytes_data.decode('utf-8')
+        df = preprocessor.preprocess(data)
+
+    else:
+        st.error("Please upload only a WhatsApp exported .txt file")
+        st.stop()
 
     unique_users_list=df['users'].unique().tolist()
     unique_users_list.remove('group_notification')
