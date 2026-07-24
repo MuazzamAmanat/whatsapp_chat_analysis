@@ -17,7 +17,12 @@ if uploaded_file is not None:
     if uploaded_file.name.endswith(".txt"):
         bytes_data = uploaded_file.getvalue()
         data = bytes_data.decode('utf-8')
-        df = preprocessor.preprocess(data)
+
+        try:
+            df = preprocessor.preprocess(data)
+        except Exception:
+            st.error("Unable to read this chat. Please make sure you upload the original WhatsApp chat exported **without media**.")
+            st.stop()
 
     else:
         st.error("Please upload only a WhatsApp exported .txt file")
