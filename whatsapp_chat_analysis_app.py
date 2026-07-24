@@ -60,12 +60,10 @@ if st.sidebar.button("Analyze Chat"):
 
     st.title("Most Active")
 
-    day_df = helper.most_active_day(df)
-    month_df = helper.most_active_month(df)
+    day_df = helper.most_active_day(selected_user, df)
+    month_df = helper.most_active_month(selected_user, df)
     member_df = helper.most_active_member(df)
 
-
-    # Day and Month side by side
     col1, col2 = st.columns(2)
 
     with col1:

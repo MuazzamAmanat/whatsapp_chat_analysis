@@ -174,8 +174,16 @@ def daily_chat_report(selected_user, df):
 
 
 
-def most_active_day(df):
-    day_df = df.groupby('day_name')['messages'].count().reset_index()
+def most_active_day(selected_user, df):
+
+    if selected_user != "Overall":
+        df = df[df['users'] == selected_user]
+
+    day_df = (
+        df.groupby('day_name')['messages']
+        .count()
+        .reset_index()
+    )
 
     days = [
         "Monday", "Tuesday", "Wednesday",
@@ -192,13 +200,47 @@ def most_active_day(df):
 
     return day_df
 
-def most_active_month(df):
-    month_df = df.groupby('month')['messages'].count().reset_index()
-    month_df = month_df.sort_values('messages', ascending=False)
+
+
+def most_active_month(selected_user, df):
+
+    if selected_user != "Overall":
+        df = df[df['users'] == selected_user]
+
+    month_df = (
+        df.groupby('month')['messages']
+        .count()
+        .reset_index()
+    )
+
+    months = [
+        "January", "February", "March",
+        "April", "May", "June",
+        "July", "August", "September",
+        "October", "November", "December"
+    ]
+
+    month_df['month'] = pd.Categorical(
+        month_df['month'],
+        categories=months,
+        ordered=True
+    )
+
+    month_df = month_df.sort_values('month')
+
     return month_df
 
 
+
 def most_active_member(df):
-    member_df = df['users'].value_counts().reset_index()
+
+    member_df = (
+        df[df['users'] != 'group_notification']
+        ['users']
+        .value_counts()
+        .reset_index()
+    )
+
     member_df.columns = ['users', 'messages']
+
     return member_df
