@@ -7,9 +7,8 @@
 [![Python](https://img.shields.io/badge/Python-3.9+-3776AB?style=flat&logo=python&logoColor=white)](https://www.python.org/)
 [![Streamlit](https://img.shields.io/badge/Streamlit-App-FF4B4B?style=flat&logo=streamlit&logoColor=white)](https://streamlit.io/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](#-license)
-[![Live Demo](https://img.shields.io/badge/🚀_Live_Demo-Click_Here-brightgreen?style=flat)](https://whatsapp-chat-analysis1.streamlit.app/)
 
-**[🔗 Try the Live App](https://whatsapp-chat-analysis1.streamlit.app/)** &nbsp;•&nbsp; **[📖 How It Works](#-how-to-use)** &nbsp;•&nbsp; **[🛠️ Tech Stack](#️-tech-stack)**
+**[🔗 Live Demo](https://whatsapp-chat-analysis1.streamlit.app/)** &nbsp;•&nbsp; **[📖 How It Works](#-how-to-use)** &nbsp;•&nbsp; **[🛠️ Tech Stack](#️-tech-stack)**
 
 </div>
 
@@ -18,6 +17,13 @@
 Ever wondered who *really* dominates your group chat? Or what time of day your friends go silent? **WhatsApp Chat Analyzer** takes your exported chat history and transforms it into a rich, interactive dashboard — no data science degree required.
 
 Just upload a `.txt` export, pick a user (or view everyone), and let the app reveal the story hidden in your messages: activity streaks, favorite words, emoji obsessions, and more.
+
+## 🔗 Live Demo
+
+**App URL:** `https://whatsapp-chat-analysis1.streamlit.app/`
+
+> ⚠️ **First-load styling issue:** On some browsers, the very first click can render an unstyled/plain page (missing fonts, missing button styling). This is a known Streamlit Community Cloud caching quirk, not a broken link.
+> **Fix:** Hard-refresh the page once — `Ctrl+Shift+R` (Windows/Linux) or `Cmd+Shift+R` (Mac) — and it will load normally. After that first refresh, it stays fixed for future visits.
 
 ## ✨ Features
 
@@ -58,7 +64,8 @@ whatsapp_chat_analysis/
 
 ### Option 1: Use it instantly (no setup)
 
-👉 **[Open the live app](https://whatsapp-chat-analysis1.streamlit.app/)** and start uploading your chat right away.
+Open the live app at `https://whatsapp-chat-analysis1.streamlit.app/` and start uploading your chat right away.
+*(Remember: hard-refresh once if the page looks unstyled on first load — see [Live Demo](#-live-demo) note above.)*
 
 ### Option 2: Run it locally
 
@@ -94,7 +101,7 @@ streamlit run app.py
    - Choose **Without Media**
    - Save the resulting `.txt` file
 
-**2. Upload it** into the app (locally or via the [live demo](https://whatsapp-chat-analysis1.streamlit.app/))
+**2. Upload it** into the app (locally or via the live demo above)
 
 **3. Choose your view**
    - 🌐 Overall group analysis
@@ -127,7 +134,6 @@ This project is licensed under the [MIT License](LICENSE).
 **Muazzam Amanat**
 
 [![GitHub](https://img.shields.io/badge/GitHub-MuazzamAmanat-181717?style=flat&logo=github)](https://github.com/MuazzamAmanat/whatsapp_chat_analysis)
-[![Streamlit App](https://img.shields.io/badge/Streamlit-Live_Demo-FF4B4B?style=flat&logo=streamlit&logoColor=white)](https://whatsapp-chat-analysis1.streamlit.app/)
 
 ---
 
